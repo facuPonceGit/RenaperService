@@ -1,10 +1,14 @@
-﻿using RenaperService.Filters;
+﻿//RenaperService/Program.cs
+using RenaperService.Filters;
 using RenaperService.Services;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://*:{port}");
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -16,10 +20,10 @@ builder.Services.AddSwaggerGen(c =>
         Description = "Servicio simulado de RENAPER para consulta de datos personales"
     });
 
-    // ✅ SOLO API KEY - Eliminar JWT
+    //  SOLO API KEY
     c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
     {
-        Description = "API Key para autenticación. Ejemplo: \"X-API-Key: sk_renaper_inventario_2025_secret_key\"",
+        Description = "API Key para autenticación. Ejemplo: \"X-API-Key: ... \"",
         Type = SecuritySchemeType.ApiKey,
         Name = "X-API-Key",
         In = ParameterLocation.Header,
@@ -44,9 +48,9 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityRequirement(requirement);
 });
 
-// Registrar servicios - ✅ ELIMINAR JWT
+// Registrar servicios
 builder.Services.AddScoped<IRenaperService, RenaperService.Services.RenaperService>();
-builder.Services.AddScoped<ApiKeyAuthFilter>(); // ✅ SOLO API KEY FILTER
+builder.Services.AddScoped<ApiKeyAuthFilter>(); //  SOLO API KEY FILTER
 
 // CORS
 builder.Services.AddCors(options =>
@@ -58,6 +62,8 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+
+
 
 var app = builder.Build();
 

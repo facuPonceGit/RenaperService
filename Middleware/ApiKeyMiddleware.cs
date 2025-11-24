@@ -1,10 +1,10 @@
+//RenaperService/Middleware/ApiKeyMiddleware.cs
 namespace RenaperService.Middleware
 {
 	public class ApiKeyMiddleware
 	{
 		private readonly RequestDelegate _next;
 		private const string APIKEY = "X-API-Key";
-		private const string VALID_API_KEY = "MiClaveSecreta"; // En producción, guardar en configuración
 		private readonly string _validApiKey;
 
 		public ApiKeyMiddleware(RequestDelegate next, IConfiguration configuration)

@@ -1,4 +1,6 @@
-﻿{
+﻿//RenaperService/Properties/launchSettings.json
+
+{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
     "http": {
