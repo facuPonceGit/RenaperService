@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen(c =>
     //  SOLO API KEY
     c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
     {
-        Description = "API Key para autenticación. Ejemplo: \"X-API-Key: sk_renaper_inventario_2025_secret_key\"",
+        Description = "API Key para autenticación. Ejemplo: \"X-API-Key: ... \"",
         Type = SecuritySchemeType.ApiKey,
         Name = "X-API-Key",
         In = ParameterLocation.Header,

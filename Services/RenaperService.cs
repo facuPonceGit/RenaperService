@@ -86,7 +86,6 @@ namespace RenaperService.Services
                 _apiKeys["testing"] = testingKey;
         }
 
-        // ... resto de métodos
         public Task<Persona?> ConsultarPersonaAsync(string dni, string genero)
         {
             var key = $"{dni}{genero?.ToUpper() ?? "M"}";
