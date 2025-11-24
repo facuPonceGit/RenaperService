@@ -1,4 +1,6 @@
-﻿using RenaperService.Models;
+﻿//RenaperService/Services/RenaperService.cs
+
+using RenaperService.Models;
 
 namespace RenaperService.Services
 {
@@ -78,13 +80,13 @@ namespace RenaperService.Services
 
         public Task<bool> ValidarApiKeyAsync(string apiKey)
         {
-            // ✅ Validar si la API Key existe en nuestro diccionario
+            //Validar si la API Key existe en nuestro diccionario
             return Task.FromResult(_apiKeys.ContainsValue(apiKey));
         }
 
         public Task<bool> ValidarCredencialesAsync(string clientId, string clientSecret)
         {
-            // ✅ Validar cliente + secret (para sistemas que usen client credentials)
+            //Validar cliente + secret (para sistemas que usen client credentials)
             return Task.FromResult(_apiKeys.TryGetValue(clientId, out var secret) && secret == clientSecret);
         }
     }

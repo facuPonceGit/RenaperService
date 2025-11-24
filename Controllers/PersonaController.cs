@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿//RenaperService/Controllers/PersonaController.cs
+using Microsoft.AspNetCore.Mvc;
 using RenaperService.Filters;
 using RenaperService.Models;
 using RenaperService.Services;
@@ -7,7 +8,7 @@ namespace RenaperService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [ServiceFilter(typeof(ApiKeyAuthFilter))] // ✅ SOLO API KEY
+    [ServiceFilter(typeof(ApiKeyAuthFilter))] // SOLO API KEY
     public class PersonasController : ControllerBase
     {
         private readonly IRenaperService _renaperService;
