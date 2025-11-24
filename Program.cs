@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen(c =>
         Description = "Servicio simulado de RENAPER para consulta de datos personales"
     });
 
-    //  SOLO API KEY - Eliminar JWT
+    //  SOLO API KEY
     c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
     {
         Description = "API Key para autenticación. Ejemplo: \"X-API-Key: sk_renaper_inventario_2025_secret_key\"",
