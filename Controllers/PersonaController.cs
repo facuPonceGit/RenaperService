@@ -8,7 +8,7 @@ namespace RenaperService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [ServiceFilter(typeof(ApiKeyAuthFilter))] //API KEY
+    [ServiceFilter(typeof(ApiKeyAuthFilter))] //filtro previo a llegar al controlador, que verifica la api key
     public class PersonasController : ControllerBase
     {
         private readonly IRenaperService _renaperService;
