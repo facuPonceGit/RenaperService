@@ -1,12 +1,12 @@
 # RenaperService - Servicio Simulado del RENAPER
 
-## Descripción
+Universidad Universidad Tecnológica Nacional - Facultad Regional Tucumán
 
-RenaperService es una API RESTful simulada del Registro Nacional de las Personas (RENAPER) de Argentina. Diseñada para entornos de desarrollo y testing, permite consultar datos personales ficticios de manera similar a como lo haría el servicio real.
+Materia: Programación de Aplicaciones Distribuidas - 2025
 
-Este proyecto fue desarrollado como parte del Trabajo Final de la materia electiva de 4to año, Programacion de Aplicaciones Distrinuidas, de Ingenieria En sistemas De Informacion.
-Docente a cargo : Ing. De la Cruz, Jose.
-Universidad Tecnologica Nacional - Facultad Regional Tucuman. 
+Docente a cargo: Ingeniero De La Cruz Jose
+
+RenaperService es una API RESTful desplegada en render.com, la cual simula ser el Registro Nacional de las Personas (RENAPER) de Argentina, permite consultar datos personales ficticios de manera similar a como lo haría el servicio real, por aquellos que cuenten con la APIKey correspondiente y hayan incorporado el servicio de manera adecuada. Fue diseñada para ser utilizada por cualquier proyecto que desee incorporar un servicio distribuido.
 
 ## Características Principales
 
